@@ -107,3 +107,4 @@ sudo lynis audit system
 ###🔹 Step 10: Monitoring Commands
 sudo ausearch -m USER_LOGIN
 sudo ss -tulnp
+## 🎯 Objectives
