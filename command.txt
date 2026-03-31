@@ -1,0 +1,47 @@
+Commands File
+
+# Update system
+sudo apt update && sudo apt upgrade -y
+
+# Create user
+sudo adduser parth
+sudo usermod -aG sudo parth
+
+# Install SSH
+sudo apt install openssh-server -y
+
+# SSH configuration
+sudo nano /etc/ssh/sshd_config
+
+# Restart SSH
+sudo systemctl restart ssh
+
+# Setup SSH key
+ssh-keygen
+ssh-copy-id parth@your_server_ip
+
+# Install UFW
+sudo apt install ufw -y
+sudo ufw allow OpenSSH
+sudo ufw allow 80
+sudo ufw allow 443
+sudo ufw enable
+
+# Install Fail2Ban
+sudo apt install fail2ban -y
+sudo systemctl enable fail2ban
+sudo systemctl start fail2ban
+
+# Configure Fail2Ban
+sudo nano /etc/fail2ban/jail.local
+
+# Install Auditd
+sudo apt install auditd -y
+sudo systemctl enable auditd
+sudo systemctl start auditd
+
+# Check logs
+sudo ausearch -m USER_LOGIN
+
+# Check open ports
+sudo ss -tulnp
