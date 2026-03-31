@@ -31,3 +31,79 @@ This project demonstrates the deployment and hardening of a Linux server using i
 ```bash
 sudo apt update
 sudo apt upgrade -y
+
+---
+
+### 🔹 Step 2: Environment Setup
+VirtualBox / VMware installed
+Minimum 2GB RAM
+Active internet connection
+
+---
+
+###🔹 Step 3: Install Security Tools
+sudo apt install ufw fail2ban auditd lynis net-tools -y
+sudo apt install openssh-server -y
+
+---
+
+###🔹 Step 4: Configure SSH Security
+sudo nano /etc/ssh/sshd_config
+
+---
+
+### Update configuration:
+PermitRootLogin no
+PasswordAuthentication no
+PubkeyAuthentication yes
+
+##**Restart SSH:**
+sudo systemctl restart ssh
+
+ ---
+
+###🔹 Step 5: Setup SSH Key Authentication
+ssh-keygen
+ssh-copy-id parth@your_server_ip
+
+---
+
+###🔹 Step 6: Configure Firewall (UFW)
+sudo ufw allow OpenSSH
+sudo ufw allow 80
+sudo ufw allow 443
+sudo ufw enable
+sudo ufw status
+
+---
+
+###🔹Step 7: Setup Fail2Ban
+sudo systemctl enable fail2ban
+sudo systemctl start fail2ban
+**Edit config:**
+sudo nano /etc/fail2ban/jail.local
+**Add:**
+[sshd]
+enabled = true
+maxretry = 3
+bantime = 600
+
+**Restart**
+sudo systemctl restart fail2ban
+
+---
+
+###🔹 Step 8: Setup Auditd
+sudo systemctl enable auditd
+sudo systemctl start auditd
+
+---
+
+###🔹 Step 9: Run Security Audit (Lynis)
+sudo lynis audit system
+
+---
+
+###🔹 Step 10: Monitoring Commands
+sudo ausearch -m USER_LOGIN
+sudo ss -tulnp
