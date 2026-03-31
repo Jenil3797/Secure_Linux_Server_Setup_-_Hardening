@@ -75,7 +75,7 @@ sudo ufw allow 443
 sudo ufw enable
 sudo ufw status
 
----
+📅 Week 2 — Advanced Security & Monitoring
 
 ###🔹Step 7: Setup Fail2Ban
 sudo systemctl enable fail2ban
