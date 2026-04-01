@@ -31,7 +31,7 @@ This project demonstrates the deployment and hardening of a Linux server using i
 ```bash
 sudo apt update
 sudo apt upgrade -y
-
+```
 ---
 
 ### 🔹 Step 2: Environment Setup
