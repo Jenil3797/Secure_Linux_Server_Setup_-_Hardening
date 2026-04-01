@@ -61,7 +61,7 @@ PermitRootLogin no
 PasswordAuthentication no
 PubkeyAuthentication yes
 
-## **Restart SSH:**
+### **Restart SSH:**
 ```bash
 sudo systemctl restart ssh
 ```
