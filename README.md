@@ -41,7 +41,7 @@ Active internet connection
 
 ---
 
-###🔹 Step 3: Install Security Tools
+### 🔹 Step 3: Install Security Tools
 ```bash
 sudo apt install ufw fail2ban auditd lynis net-tools -y
 sudo apt install openssh-server -y
@@ -49,7 +49,7 @@ sudo apt install openssh-server -y
 
 ---
 
-###🔹 Step 4: Configure SSH Security
+### 🔹 Step 4: Configure SSH Security
 ```bash
 sudo nano /etc/ssh/sshd_config
 ```
@@ -68,7 +68,7 @@ sudo systemctl restart ssh
 
  ---
 
-###🔹 Step 5: Setup SSH Key Authentication
+### 🔹 Step 5: Setup SSH Key Authentication
 ```bash
 ssh-keygen
 ssh-copy-id parth@your_server_ip
@@ -76,7 +76,7 @@ ssh-copy-id parth@your_server_ip
 
 ---
 
-###🔹 Step 6: Configure Firewall (UFW)
+### 🔹 Step 6: Configure Firewall (UFW)
 ```bash
 sudo ufw allow OpenSSH
 sudo ufw allow 80
@@ -89,7 +89,7 @@ sudo ufw status
 
 📅 Week 2 — Advanced Security & Monitoring
 
-###🔹Step 7: Setup Fail2Ban
+### 🔹Step 7: Setup Fail2Ban
 ```bash
 sudo systemctl enable fail2ban
 sudo systemctl start fail2ban
@@ -115,7 +115,7 @@ sudo systemctl restart fail2ban
 
 ---
 
-###🔹 Step 8: Setup Auditd
+### 🔹 Step 8: Setup Auditd
 ```bash
 sudo systemctl enable auditd
 sudo systemctl start auditd
@@ -123,14 +123,14 @@ sudo systemctl start auditd
 
 ---
 
-###🔹 Step 9: Run Security Audit (Lynis)
+### 🔹 Step 9: Run Security Audit (Lynis)
 ```bash
 sudo lynis audit system
 ```
 
 ---
 
-###🔹 Step 10: Monitoring Commands
+### 🔹 Step 10: Monitoring Commands
 ```bash
 sudo ausearch -m USER_LOGIN
 sudo ss -tulnp
