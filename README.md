@@ -19,7 +19,7 @@ This project demonstrates the deployment and hardening of a Linux server using i
 - Ubuntu / Kali Linux  
 - OpenSSH Server  
 - UFW Firewall  
-- Fail2Ban  
+- Fail2Ban 
 - Auditd  
 - Lynis  
 
@@ -87,7 +87,7 @@ sudo ufw status
 
 ---
 
-📅 Week 2 — Advanced Security & Monitoring
+**📅 Week 2 — Advanced Security & Monitoring **
 
 ### 🔹Step 7: Setup Fail2Ban
 ```bash
